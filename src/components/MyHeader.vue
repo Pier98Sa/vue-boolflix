@@ -5,8 +5,8 @@
         <div class="container-fluid ">
             <a class="navbar-brand text-uppercase ms_red fw-bold fs-3">boolflix</a>
             <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" >
-                <button class="btn ms_btn-bg-red" type="submit">Search</button>
+                <input class="form-control me-2" type="search" placeholder="Search" v-model="textToSearch">
+                <button class="btn ms_btn-bg-red" type="submit" @click.prevent ="$emit('search',textToSearch)">Search</button>
             </form>
         </div>
     </nav>
@@ -17,6 +17,12 @@
 
 <script>
 export default {
+    name: 'MyHeader',
+    data(){
+        return{
+            textToSearch: "",
+        }
+    }
 
 }
 </script>
