@@ -1,6 +1,7 @@
 <template>
   <div>
         <ul class="text-white " v-for="(film, index) in films" :key="index">
+            <li><img class="img-fluid" :src="'https://image.tmdb.org/t/p/w342/'+ (film.backdrop_path)" alt=""></li>
             <li>{{film.title}}</li>
             <li>{{film.original_title}}</li>
             <li v-if="film.original_language == 'en'">
@@ -27,6 +28,6 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '~flag-icons/css/flag-icons.css'
+    @import '~flag-icons/css/flag-icons.css'
 
 </style>

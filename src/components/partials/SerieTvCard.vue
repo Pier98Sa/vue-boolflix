@@ -1,6 +1,7 @@
 <template>
   <div>
         <ul class="text-white " v-for="(Serie, index) in Series" :key="index">
+            <img class="img-fluid" :src="'https://image.tmdb.org/t/p/w342/'+ (Serie.poster_path)" alt="">
             <li>{{Serie.name}}</li>
             <li>{{Serie.original_name}}</li>
             <li v-if="Serie.original_language == 'en'">
@@ -27,6 +28,5 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-@import '~flag-icons/css/flag-icons.css'
-
+    @import '~flag-icons/css/flag-icons.css'
 </style>
