@@ -1,7 +1,15 @@
 <template>
   <main>
       <div class="container py-5">
-        <FilmsList class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 " :searchs="searchsResult"/>
+        <div v-if="searchsFilm.length > 0">
+            <h3 class="text-white">Films:</h3>
+        </div>
+        <FilmsList class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 " :searchs="searchsFilm"/>
+        
+        <div v-if="searchsSerieTv.length > 0">
+            <h3 class="text-white">Serie Tv:</h3>
+        </div>
+        <SerieTvList class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 " :searchs="searchsSerieTv"/>
 
       </div>
 
@@ -11,13 +19,17 @@
 <script>
 
 import FilmsList from "./FilmsList.vue"
+import SerieTvList from "./SerieTvList.vue"
+
 export default {
     name: 'MyMain',
     props:{
-        searchsResult : Array,
+        searchsFilm : Array,
+        searchsSerieTv :  Array
     },
     components:{
-        FilmsList
+        FilmsList,
+        SerieTvList,
     }
 
 }

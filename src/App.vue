@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <MyHeader @search='searching'/>
-    <MyMain :searchsResult="listaFilm"/>
+    <MyMain :searchsFilm="listaFilm" :searchsSerieTv="listaSerieTv"/>
   </div>
 </template>
 
@@ -16,10 +16,9 @@ export default {
   data(){
     return{
       listaFilm: [],
-      searchName : '',
-      api:"https://api.themoviedb.org/3/search/movie?api_key=",
+      listaSerieTv: [],
       api_key: "facff0615b740fb6db3b6d5e9b22e08f",
-      forSearch: "&query=",
+      language: 'it-It',
 
     }
   },
@@ -29,14 +28,30 @@ export default {
   },
   methods:{
     searching(text){
-      this.searchName = text;
+      
+      const params = {
+        params:{
+          'api_key': this.api_key,
+          'query': text,
+          'language': this.language
+        }
+       
+      }
 
-      axios.get(this.api + this.api_key + this.forSearch + this.searchName)
+      axios.get('https://api.themoviedb.org/3/search/movie', params)
       .then((response) => {
         //popolamento dell'array listaAlbum
         this.listaFilm = response.data.results;
         console.log(this.listaFilm);
         this.$emit('films',this.listaFilm);
+      });
+
+      axios.get('https://api.themoviedb.org/3/search/tv', params)
+      .then((response) => {
+        //popolamento dell'array listaAlbum
+        this.listaSerieTv = response.data.results;
+        console.log(this.listaSerieTv);
+        this.$emit('serieTv',this.listaSerieTv);
       });
  
     }

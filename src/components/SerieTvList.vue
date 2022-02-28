@@ -1,16 +1,17 @@
 <template> 
-    <FilmCard :films="searchs" class="col g-4"/>  
+    <SerieTvCard :Series="searchs" class="col g-4"/>  
 </template>
 
 <script>
-import FilmCard from './partials/FilmCard.vue'
+import SerieTvCard from './partials/SerieTvCard.vue'
+
 export default {
-    name:'FilmsList',
+    name:'SerieTvList',
     props:{
         searchs : Array,
     },
     components:{
-        FilmCard,
+        SerieTvCard,
     }
 
 }
