@@ -21,7 +21,7 @@
 export default {
     name: 'SerieTvCard',
     props:{
-        'Series': Array
+        'Series': Array,
     }
 
 }
