@@ -3,7 +3,7 @@
         <ul class="text-white" >
             <!--poster-->
             <img v-if="info.poster_path" class="img-fluid" :src="'https://image.tmdb.org/t/p/w342/'+ (info.poster_path)" alt="">
-            <img v-else class="img-fluid" src="../../assets/not-found.png" alt="">
+            <img v-else class="img-fluid" src="../../assets/movie.jpg" alt="">
 
             <!--nome-->
             <li>{{info.title ? info.title : info.name}}</li>
