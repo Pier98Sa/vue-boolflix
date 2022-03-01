@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <MyHeader @search='searching'/>
+    <MyHeader @search='doSearch'/>
     <MyMain :searchsFilm="listaFilm" :searchsSerieTv="listaSerieTv"/>
   </div>
 </template>
@@ -27,8 +27,8 @@ export default {
     MyMain
   },
   methods:{
-    searching(text){
-      
+    doSearch(text){
+
       const params = {
         params:{
           'api_key': this.api_key,
@@ -38,6 +38,11 @@ export default {
        
       }
 
+      this.searchingFilm(params);
+      this.searchingSerieTv(params)
+    },
+
+    searchingFilm(params){
       axios.get('https://api.themoviedb.org/3/search/movie', params)
       .then((response) => {
         //popolamento dell'array listaAlbum
@@ -45,7 +50,9 @@ export default {
         console.log(this.listaFilm);
         this.$emit('films',this.listaFilm);
       });
+    },
 
+    searchingSerieTv(params){
       axios.get('https://api.themoviedb.org/3/search/tv', params)
       .then((response) => {
         //popolamento dell'array listaAlbum
@@ -53,8 +60,8 @@ export default {
         console.log(this.listaSerieTv);
         this.$emit('serieTv',this.listaSerieTv);
       });
- 
     }
+
 
     
   },
@@ -62,6 +69,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~@fortawesome/fontawesome-free/css/all.css';
 @import './style/general.scss';
+@import '~flag-icons/css/flag-icons.css'
 
 </style>
