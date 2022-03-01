@@ -1,6 +1,6 @@
 <template> 
     <div class="row row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 ">
-        <MyCard v-for="(Serie, index) in Series" :key="index" :info="Serie" class="col g-4"/> 
+        <MyCard v-for="(Serie, index) in Series" :key="index" :info="Serie" class="col g-4 ms_col-height"/> 
     </div>
      
 </template>
@@ -20,5 +20,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+    .ms_col-height{
+        width: 208px;
+        height: 342px;
+        margin: 0 5px;
+    }
 </style>
