@@ -40,17 +40,7 @@ export default {
     data(){
         return{
             languages: ['en', 'es','fr','hi','it','ja','ko','pt','zh'],
-            show: true
         }
-    },
-    methods:{
-        overChangeShow(){
-            this.show = false
-        },
-        leaveChangeShow(){
-            this.show = true
-        }
-        
     },
     computed:{
         getStar() {
