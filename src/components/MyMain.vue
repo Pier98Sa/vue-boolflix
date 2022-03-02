@@ -1,15 +1,12 @@
 <template>
   <main>
       <div class="container py-5">
-        
-        <h3 v-if="searchsFilm.length > 0" class="text-white">Films:</h3>
-        <FilmsList  :Films="searchsFilm"/>
-        
-        <h3 v-if="searchsSerieTv.length > 0" class="text-white">Serie Tv:</h3>
-        <SerieTvList :Series="searchsSerieTv"/>
-
+            <h3 v-if="searchsFilm.length > 0" class="text-white">Films:</h3>
+            <FilmsList  :Films="searchsFilm"/>
+            
+            <h3 v-if="searchsSerieTv.length > 0" class="text-white">Serie Tv:</h3>
+            <SerieTvList :Series="searchsSerieTv"/>
       </div>
-
   </main>
 </template>
 
@@ -26,7 +23,7 @@ export default {
     },
     components:{
         FilmsList,
-        SerieTvList,
+        SerieTvList,  
     }
 
 }
