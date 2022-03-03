@@ -47,7 +47,6 @@ export default {
       .then((response) => {
         //popolamento dell'array listaAlbum
         this.listaFilm = response.data.results;
-        console.log(this.listaFilm);
         this.$emit('films',this.listaFilm);
       });
     },
@@ -57,7 +56,6 @@ export default {
       .then((response) => {
         //popolamento dell'array listaAlbum
         this.listaSerieTv = response.data.results;
-        console.log(this.listaSerieTv);
         this.$emit('serieTv',this.listaSerieTv);
       });
     }
@@ -71,6 +69,5 @@ export default {
 <style lang="scss">
 @import '~@fortawesome/fontawesome-free/css/all.css';
 @import './style/general.scss';
-@import '~flag-icons/css/flag-icons.css'
 
 </style>

@@ -24,7 +24,7 @@
 
                 <!--Riassunto-->
                 <div class="resume">
-                   <span class="fw-bolder">Overview: </span>  {{info.overview}}
+                   <span v-show="info.overview" class="fw-bolder">Overview: </span>  {{info.overview}}
                 </div>
             </div>
         </div>
